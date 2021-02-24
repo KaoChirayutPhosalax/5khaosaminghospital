@@ -1,3 +1,6 @@
+<?php
+    include "connection.php";
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -43,10 +46,13 @@ font-family: 'Kanit', sans-serif;
     </nav>
 
     <div class="container">
-      <from>
+
+      <form action="5khaosaming.php" method="post" enctype="multipart/form-data">  
         <br />
 
         <h3 class="text-center" id="userId">เเจ้งเรื่อง 5 ส.</h3>
+
+       <input type="text" name="fname" value="<?php echo $name;?>" >
 
         <br />
         <div class="mb-3">
@@ -54,6 +60,7 @@ font-family: 'Kanit', sans-serif;
             >เเจ้งเรื่อง</label
           >
           <textarea
+            name="tite"
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
@@ -64,6 +71,7 @@ font-family: 'Kanit', sans-serif;
             >คำเเนะนำ</label
           >
           <textarea
+            name="tite2"
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
@@ -76,17 +84,19 @@ font-family: 'Kanit', sans-serif;
             class="form-control form-control-lg"
             id="formFileLg"
             type="file"
+            name="file"
           />
         </div>
 
         <br />
 
         <div class="d-grid gap-2">
-          <button class="btn btn-primary" type="button">บันทึก</button>
-          <button class="btn btn-secondary" type="button">ยกเลิก</button>
+          <button class="btn btn-primary" type="submit" name="submit" id="btnMsg" onclick="sendMsg()">บันทึก</button>
+          <button class="btn btn-secondary" type="button" id="btnClose" onclick="closed()">ยกเลิก</button>
         </div>
       </from>
     </div>
+
 
     <p id="os"><b>OS:</b></p>
     <p id="language"><b>Language:</b></p>
@@ -102,13 +112,7 @@ font-family: 'Kanit', sans-serif;
     <p id="roomId"><b>roomId:</b></p>
     <p id="groupId"><b>groupId:</b></p>
 
-    <button id="btnMsg" onclick="sendMsg()">Send Message</button>
-    <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
-    <button onclick="openWindow()">Open Window</button>
-    <button id="btnLogOut" onclick="logOut()">Log Out</button>
-    <button id="btnClose" onclick="closed()">Close</button>
-
-    <script src="js/vconsole.min.js"></script>
+    <!-- <script src="js/vconsole.min.js"></script> -->
 
     <script src="https://static.line-scdn.net/liff/edge/versions/2.8.0/sdk.js"></script>
     <script>
@@ -124,6 +128,17 @@ font-family: 'Kanit', sans-serif;
           alert("Message sent");
         }
       }
+
+    //   function fncInsert () 
+    //   {
+    //     $sql = "INSERT INTO MyGuests (firstname, lastname, email) VALUES ('John', 'Doe', 'john@example.com')";
+
+    //     if (mysqli_query($conn, $sql)) {
+    //     echo "New record created successfully";
+    //     } else {
+    //     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    //     }
+    //   }
 
       function getContext() {
         document.getElementById("type").append(liff.getContext().type);
