@@ -1,6 +1,7 @@
 <?php
     include "connection.php";
 ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,8 +18,7 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet" />
 
 <style>
 body {
@@ -49,18 +49,13 @@ font-family: 'Kanit', sans-serif;
 
       <form action="5khaosaming.php" method="post" enctype="multipart/form-data">  
         <br />
-
-        <h3 class="text-center" id="userId">เเจ้งเรื่อง 5 ส.</h3>
-
-       <input type="text" name="fname" value="<?php echo $name;?>" >
-
         <br />
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label"
             >เเจ้งเรื่อง</label
           >
           <textarea
-            name="tite"
+            name="title"
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
@@ -71,7 +66,7 @@ font-family: 'Kanit', sans-serif;
             >คำเเนะนำ</label
           >
           <textarea
-            name="tite2"
+            name="title1"
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
@@ -111,6 +106,9 @@ font-family: 'Kanit', sans-serif;
     <p id="utouId"><b>utouId:</b></p>
     <p id="roomId"><b>roomId:</b></p>
     <p id="groupId"><b>groupId:</b></p>
+
+ <input id="Id">
+ <p id="Id">
 
     <!-- <script src="js/vconsole.min.js"></script> -->
 
@@ -153,6 +151,8 @@ font-family: 'Kanit', sans-serif;
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").append(profile.userId);
         document.getElementById("displayName").append(profile.displayName);
+
+        document.getElementById("Id").textContent = profile.userId;
       }
 
       function getEnvironment() {
