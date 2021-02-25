@@ -9,7 +9,7 @@ $dir = "uploads/";
 $fileImage = $dir . basename($_FILES["file"]["name"]);
 
 if (move_uploaded_file($_FILES["file"]["tmp_name"], $fileImage)){
-    echo "อัพโหลดสำเร็จ";
+    echo "$fileImage";
 }else{
     echo "ERROR";
 }
