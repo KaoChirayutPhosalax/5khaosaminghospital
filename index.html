@@ -49,6 +49,7 @@ font-family: 'Kanit', sans-serif;
 
       <form action="5khaosaming.php" method="post" enctype="multipart/form-data">  
         <br />
+        <input class="form-control"  id="userid" name="userid" /> <br />
         <br />
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label"
@@ -107,9 +108,6 @@ font-family: 'Kanit', sans-serif;
     <p id="roomId"><b>roomId:</b></p>
     <p id="groupId"><b>groupId:</b></p>
 
- <input id="Id">
- <p id="Id">
-
     <!-- <script src="js/vconsole.min.js"></script> -->
 
     <script src="https://static.line-scdn.net/liff/edge/versions/2.8.0/sdk.js"></script>
@@ -152,7 +150,7 @@ font-family: 'Kanit', sans-serif;
         document.getElementById("userId").append(profile.userId);
         document.getElementById("displayName").append(profile.displayName);
 
-        document.getElementById("Id").textContent = profile.userId;
+        document.getElementById("userId").textContent = profile.userId;
       }
 
       function getEnvironment() {
