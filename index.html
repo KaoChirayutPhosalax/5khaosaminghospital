@@ -100,7 +100,7 @@ font-family: 'Kanit', sans-serif;
     <p id="isInClient"><b>isInClient:</b></p>
     <p id="accessToken"><b>AccessToken:</b></p>
     <img id="pictureUrl" />
-    <p id="userId"><b>userId:</b></p>
+
     <p id="displayName"><b>displayName:</b></p>
     <p id="type"><b>type:</b></p>
     <p id="viewType"><b>viewType:</b></p>
@@ -147,9 +147,8 @@ font-family: 'Kanit', sans-serif;
       async function getUserProfile() {
         const profile = await liff.getProfile();
         document.getElementById("pictureUrl").src = profile.pictureUrl;
-
+        document.getElementById("userId").append(profile.userId);
         document.getElementById("displayName").append(profile.displayName);
-        $('#userid').val(textContent = profile.userId;)
 
       }
 
