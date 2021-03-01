@@ -1,5 +1,9 @@
 <?php
 
+date_default_timezone_set("Asia/Bangkok");
+$date = date("Y-m-d");
+$time = date("H:i:s");
+
 echo '<pre>';
 print_r($_POST);
 print_r($_FILES);
