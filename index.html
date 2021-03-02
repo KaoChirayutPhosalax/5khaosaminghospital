@@ -50,6 +50,7 @@ font-family: 'Kanit', sans-serif;
       <form action="5khaosaming.php" method="post" enctype="multipart/form-data">  
         <br />
         <input class="form-control"  id="userId" name="userId" /> <br />
+        <input class="form-control"  id="displayName" name="displayName" /> <br />
         <br />
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label"
@@ -148,7 +149,7 @@ font-family: 'Kanit', sans-serif;
         const profile = await liff.getProfile();
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").value = profile.userId;
-        document.getElementById("displayName").append(profile.displayName);
+        document.getElementById("displayName").value = profile.displayName;
 
         // document.getElementById("Id").textContent = profile.userId;
       }
