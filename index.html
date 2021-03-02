@@ -97,9 +97,6 @@ font-family: 'Kanit', sans-serif;
 
 
 
-    <img id="pictureUrl" />
-    <p id="userId"><b>userId:</b></p>
-    <p id="displayName"><b>displayName:</b></p>
 
 
     <!-- <script src="js/vconsole.min.js"></script> -->
@@ -134,7 +131,7 @@ font-family: 'Kanit', sans-serif;
 
       async function getUserProfile() {
         const profile = await liff.getProfile();
-        document.getElementById("pictureUrl").src = profile.pictureUrl;
+
         document.getElementById("userId").value = profile.userId;
         document.getElementById("displayName").value = profile.displayName;
 
